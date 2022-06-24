@@ -22,10 +22,10 @@ class DS{
 	public void print(){
 		if(prev!=null)
 			System.out.println("ds1 = "+prev.prev.prev.prev.prev.a+
-							   "\nds2 = "+prev.prev.prev.prev.a+
-							   "\nds3 = "+prev.prev.prev.a+
-							   "\nds4 = "+prev.prev.a+
-							   "\nds5 = "+prev.a+
-							   "\nds6 = "+a);
+					   "\nds2 = "+prev.prev.prev.prev.a+
+					   "\nds3 = "+prev.prev.prev.a+
+					   "\nds4 = "+prev.prev.a+
+					   "\nds5 = "+prev.a+
+					   "\nds6 = "+a);
 	}
 }

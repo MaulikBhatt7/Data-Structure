@@ -11,6 +11,7 @@ public class StackDemo{
 				return 0;
 			}
 			else{
+				top++;
 				a[top]=x;
 				j++;
 				return a[top];

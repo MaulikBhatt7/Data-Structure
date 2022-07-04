@@ -36,10 +36,10 @@ class Method_Implement_Demo{
 			}
 		}
 		if(a==b){
-			System.out.println("Equal");
+			System.out.println("Power of a and b are equal");
 		}
 		else {
-			System.out.println("Not equal");
+			System.out.println("Power of a and are not equal");
 		}
 	}
 }

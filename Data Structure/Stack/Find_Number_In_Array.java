@@ -2,9 +2,8 @@ import java.util.Scanner;
 class StackDemo{
 	static int array[]=new int[100];
 	static int top=-1;
-	static boolean flag=true;
 	public static void push(int n){
-		if(top>=10){
+		if(top>=100){
 			System.out.println("Stack Overflow");
 		}
 		else{
@@ -23,20 +22,20 @@ class StackDemo{
 			return n;
 		}
 	}
-	public static void find(int l,int m){
-		System.out.println("-------------------------------------");
-		for(int j=0;j<l;j++){
-			int a=pop();
-			if(a==m){
-				System.out.println(m+" found at index "+(l-j-1));
-				flag=false;
-			}
+	public static boolean find(int a,int m){
+		if(a==m){
+			return true;
 		}
-		if(flag){
-			System.out.println(m+" not found");
+		else if(top>=0){
+			a=pop();
+			return find(a,m);
+		}
+		else{
+			return false;
 		}
 	}
 }
+
 public class Find_Number_In_Array{
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -49,6 +48,12 @@ public class Find_Number_In_Array{
 		}
 		System.out.print("Enter no. you want to find : ");
 		int m=sc.nextInt();
-		sd.find(l,m);
+		int a=sd.pop();
+		boolean flag=sd.find(a,m);
+		if(flag){
+			System.out.println("Number is found");
+		}
+		else
+			System.out.println("Number is not found");
 	}
 }

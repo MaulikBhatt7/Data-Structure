@@ -1,11 +1,9 @@
 import java.util.Scanner;
 class RevPol{
 	static char a[]=new char[100];
-	static int top=-1,rank=0;
-	static char s,next;
+	static int top=-1,rank=0,ipf,spf;
+	static char s,next,temp;
 	static String polish="";
-	static char temp;
-	static int ipf,spf;
 	static boolean flag=true;
 	public static int ipf(char c){
 		if(c=='+'||c=='-'){

@@ -1,7 +1,7 @@
 class Method_Implement_Demo{
-	int a[]=new int[100];
-	int flag=-1
-	public void push(int n){
+	static int a[]=new int[100];
+	static int top=-1
+	public static void push(int n){
 		if(top>=10){
 			System.out.println("Stack Overflow");
 		}
@@ -9,7 +9,7 @@ class Method_Implement_Demo{
 			a[++top]=n;
 		}
 	}
-	public int pop(){
+	public static int pop(){
 		if(top<0){
 			System.out.println("Stack Underflow");
 		}
@@ -17,7 +17,7 @@ class Method_Implement_Demo{
 			return a[top--];
 		}
 	}
-	public int peek(){
+	public static int peek(){
 		if(top<0){
 			System.out.println("Stack Underflow");
 		}
@@ -25,7 +25,7 @@ class Method_Implement_Demo{
 			return a[top];
 		}
 	}
-	public int peep(int i){
+	public static int peep(int i){
 		if(top-i+1<0){
 			System.out.println("Stack Underflow");
 		}
@@ -33,7 +33,7 @@ class Method_Implement_Demo{
 			return a[top-i+1];
 		}
 	}
-	public void change(int i,int n){
+	public static void change(int i,int n){
 		if(top-i+1<0){
 			System.out.println("Stack Underflow");
 		}
@@ -41,7 +41,7 @@ class Method_Implement_Demo{
 			a[top-i+1]=n;
 		}
 	}
-	public void display(){
+	public static void display(){
 		for(int i=0;i<a.length;i++){
 			System.out.println(a[i]);
 		}

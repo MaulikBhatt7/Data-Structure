@@ -77,7 +77,7 @@ class RevPol{
 	public static void polishString(String str){
 		for(int i=0;i<str.length();i++){
 			next=str.charAt(i);
-			while(next!=' '){
+			if(next!=' '){
 				if(top<0){
 					System.out.println("Invalid string.");
 					flag=false;
@@ -102,7 +102,7 @@ class RevPol{
 				else{
 					pop();
 				}
-				break;
+				
 			}
 		}
 		if(top!=0 || rank!=1){

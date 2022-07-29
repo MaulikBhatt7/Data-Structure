@@ -1,96 +1,84 @@
-class Link{
-	static Node head;
-	static class Node{
-		int value;
-		Node next;
-		Node(int n){
-			value=n;
-			next=null;
+public class linkList_delete {
+    Node head;
+    public class Node{
+        int data;
+        Node next;
+        public Node(int data){
+            this.data=data;
+            next=null;
+        }   
+    }
 
-		}
-	}
-	static void insert(int m){
-		Node mNode = new Node(m);
-		if(head==null){
-			head=mNode;
-		}
-		else{
-			Node lastNode = head;
-			while(lastNode.next!=null){
-				lastNode=lastNode.next;
-			}
-			lastNode.next=mNode;
-		}
-	}
-	// static void deleteAtlast(){
-	// 	if(head==null){
 
-	// 	}
-	// 	else{
-	// 		Node lastNode=head;
-	// 		while(lastNode.next.next!=null){
-	// 			lastNode=lastNode.next;
-	// 		}
-	// 		lastNode.next=null;
-	// 	}
-	// }
+    public void insertAtAnd(int x){
+        Node nnode=new Node(x);
+        if(head==null){
+            head=nnode;
+        }
+        else{
+            Node lastnode=head;
+            while(lastnode.next!=null){
+                lastnode=lastnode.next;
+            }
+            lastnode.next=nnode;
+        }
+    }
 
-	static void delete(int n){
-		Node lastNode = head;
-		Node prev=null;
-		if(lastNode.value==n){
-			System.out.println("abc");
-				head=lastNode.next;
-		}
-		else{
-			while(lastNode.next!=null){
-			 if(lastNode.value==n){
-				prev.next=lastNode.next;
-				System.out.println("matched");
-				break;
-				} 	
-				prev=lastNode;
-				lastNode=lastNode.next;	
-			}
-			if(lastNode.value==n){
-				prev.next=null;
-			}
-		}
-		
-}
+    public void insertAtFirst( int x){
+        Node node=new Node(x);
+        if(head==null){
+            head=node;
+        }
+        else{
+            node.next=head;
+            head=node;
+        }
+    }
 
-	static void display(){
-		Link lastNode2=new Link();
-		if(head==null){
-			System.out.println("Empty");
-		}
-		else{
-			System.out.print("\nLinked List :");
-			Node lastNode = head;
-			while(lastNode.next!=null){
-				System.out.print(lastNode.value+" => ");
-				lastNode=lastNode.next;
-			}
-			System.out.print(lastNode.value);
-			
-		}
-	}
-}
+    public void display(){
+        if(head==null){
+            System.out.println("Empty");
+        }else{
+            Node node=head;
+            while(node!=null){
+                System.out.print("["+node.data+"] ");
+                node=node.next;
+            }
+        }
+    }
 
-class LinkDemo{
-	public static void main(String[] args) {
-		Link obj = new Link();
-		obj.insert(5);
-		obj.insert(6);
-		obj.insert(7);
-		obj.insert(8);
-		obj.insert(9);
-		obj.insert(10);
-		// obj.display();
-		obj.insert(20);
-			
-		// obj.deleteAtlast();
-		obj.delete(20);
-		obj.display();
-	}
+
+    public void delete(int x){
+        Node node=head;
+        Node prev=head;
+        while(node!=null){
+            if(head.data==x){
+                head=head.next;
+                break;
+            }
+            else if(node.data==x){
+                break;
+            }
+            prev=node;
+            node=node.next;
+        }
+        prev.next=node.next;
+    }
+
+
+    public static void main(String[] args) throws NullPointerException {
+        linkList_delete list=new linkList_delete();
+        // list.insertAtAnd(10);
+        // list.insertAtAnd(20);
+        // list.insertAtAnd(30);
+        // list.insertAtAnd(40);
+
+        list.insertAtFirst(10);
+        list.insertAtFirst(20);
+        list.insertAtFirst(30);
+        list.insertAtFirst(40);
+        
+        // list.delete(30);
+        list.display();
+    }
 }
